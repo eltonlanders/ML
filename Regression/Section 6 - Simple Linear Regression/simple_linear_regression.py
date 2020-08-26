@@ -20,11 +20,9 @@ regressor = LinearRegression()
 regressor.fit(X_train, y_train)
 
 # Predicting the Test set results
-y_pred = regressor.predict(X_test)   #vector of predictions of the model
-# the difference between y_test and y_pred is that the y_test has the actual test data values and the y_pred has the predicted values our model predicted
+y_pred = regressor.predict(X_test)   
 
 # Visualising the Training set results
-#these are the real points on which the model is trained i.e. the training set
 plt.scatter(X_train, y_train, color = 'red')
 plt.plot(X_train, regressor.predict(X_train), color = 'blue')   #not y_pred coz it predicts on the test we are predicting on the train
 plt.title('Salary vs Experience (Training set)')
@@ -33,7 +31,6 @@ plt.ylabel('Salary')
 plt.show()
 
 # Visualising the Test set results
-#these are new points and the model is predicting on the unseen test data
 plt.scatter(X_test, y_test, color = 'red')
 plt.plot(X_train, regressor.predict(X_train), color = 'blue')
 plt.title('Salary vs Experience (Test set)')
