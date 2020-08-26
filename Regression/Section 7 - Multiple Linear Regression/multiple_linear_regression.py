@@ -35,16 +35,13 @@ regressor.fit(X_train, y_train)
 # Predicting the Test set results
 y_pred = regressor.predict(X_test)
 np.set_printoptions(precision=2)
-print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))   #shows predicted and true results side by side
+print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))   
 
 #Building the optimal model using backward selection
-# We are adding ones to the start of the X df coz in regression equation B0 has a X0 coefficient value of 1 which is not visible to the statsmodel library
-import statsmodels.api as sm
-X=np.append(arr=np.ones((50, 1)).astype(int), values=X, axis=1)   #change the shapes of ones accordingly
 
-#ckeck for P>|t| if greater than sl than drop it
-#then copy paste the whole cell in a new one with removing the features above the SL
-#the last ones standing are the important ones
+import statsmodels.api as sm
+X=np.append(arr=np.ones((50, 1)).astype(int), values=X, axis=1)   
+
 X_opt=X[:, [0, 1, 2, 3, 4, 5]]
 X_opt=np.array(X_opt, dtype=float)
 regressor_OLS=sm.OLS(endog=y, exog=X_opt).fit()
