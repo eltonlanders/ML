@@ -15,8 +15,8 @@ y = y.reshape(len(y),1)
 print(y)
 
 # Feature Scaling
-from sklearn.preprocessing import StandardScaler   #SVR doesn't include feature scaling in the library
-sc_X = StandardScaler()   #2 scalers objects bcoz they will be fitted on X and y matrix
+from sklearn.preprocessing import StandardScaler  
+sc_X = StandardScaler()   
 sc_y = StandardScaler()
 X = sc_X.fit_transform(X)
 y = sc_y.fit_transform(y)
@@ -25,11 +25,11 @@ print(y)
 
 # Training the SVR model on the whole dataset
 from sklearn.svm import SVR
-regressor = SVR(kernel = 'rbf')   #rbf coz our data is non-linear
+regressor = SVR(kernel = 'rbf')   
 regressor.fit(X, y)
 
 # Predicting a new result
-sc_y.inverse_transform(regressor.predict(sc_X.transform([[6.5]])))   #to not get the scaled answer but the original one
+sc_y.inverse_transform(regressor.predict(sc_X.transform([[6.5]])))  
 
 # Visualising the SVR results
 plt.scatter(sc_X.inverse_transform(X), sc_y.inverse_transform(y), color = 'red')
