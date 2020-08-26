@@ -28,7 +28,4 @@ plt.xlabel('Position level')
 plt.ylabel('Salary')
 plt.show()
 
-""" We have more steps(splits) in this model
-Increasing the number of trees doesn't actually increase the steps in the visualization, it
-just better places the steps to make a better prediction
-"""
+
