@@ -28,7 +28,3 @@ plt.xlabel('Position level')
 plt.ylabel('Salary')
 plt.show()
 
-"""The DT regressor works fine with higher dimensions, although the graph for higher dimensions cannot be visualized.
-The graph for the DT in 1D is step wise coz the algoritm takes the average of the values between intervals
-Also the Decision tree is a non-linear type of regression.
-"""
