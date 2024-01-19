@@ -1,4 +1,4 @@
 # ML
 This is a folder of my projects in Machine Learning.
-It is in python language.
+All projects are in Python.
 I have implemented various machine learning models to get good results.
